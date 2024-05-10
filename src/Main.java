@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         DrinkFactory coffeeFactory = new CoffeeFactory();
         DrinkFactory juiceFactory = new JuiceFactory();
-        Container[] containers = {new Container(coffeeFactory.createDrink("BOSS無糖ブラック")), new Container(juiceFactory.createDrink("バリヤースオレンジ"))};
+        Container[] containers = {new Container(coffeeFactory.createDrink("BOSS無糖ブラック"), Material.CAN), new Container(juiceFactory.createDrink("バリヤースオレンジ"), Material.PLASTICBOTTLE)};
 
         for (Container container : containers) {
             System.out.println(container.getDrinkName() + "の操作");

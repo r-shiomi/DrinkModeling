@@ -2,19 +2,23 @@
  * 容器クラス
  */
 public class Container implements Shakable, Openable, Drinkable {
-    private Drink drink;
+    private final Drink drink;
     private boolean isOpen;
+    private final Material material;
 
-    // 余裕があれば素材（ペットボトル、缶）フィールドを足し、openメソッド等で利用する
-
-    public Container(Drink drink) {
+    public Container(Drink drink, Material material) {
         this.drink = drink;
         this.isOpen = false;
+        this.material = material;
     }
 
     public void open() {
         this.isOpen = true;
-        System.out.println("容器を開けました。");
+        if(material == Material.CAN) {
+            System.out.println("缶のプルタブを開けました。");
+        }else if (material == Material.PLASTICBOTTLE){
+            System.out.println("ペットボトルのキャップを開けました。");
+        }
     }
 
     public void drink() {
@@ -35,6 +39,6 @@ public class Container implements Shakable, Openable, Drinkable {
     }
 
     public String getDrinkName() {
-        return this.drink.getName();
+        return drink.getName();
     }
 }
