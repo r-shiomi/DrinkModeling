@@ -1,6 +1,6 @@
 public class CoffeeFactory implements DrinkFactory {
     @Override
-    public Drink createDrink(String name) {
-        return new Coffee(name);
+    public Container createDrink(String name, Material material) {
+        return new Container(new Coffee(name), material);
     }
 }
