@@ -1,3 +1,3 @@
 public interface DrinkFactory {
-    Drink createDrink(String name);
+    Container createDrink(String name, Material material);
 }
